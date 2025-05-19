@@ -1,6 +1,6 @@
 import bcrypt from 'bcrypt'
 import User from '../models/User.js'
-import { registerSchema } from '../validators/userValidator.js'
+import { registerSchema } from '../validators/userValidators.js'
 
 export async function registerController(req, res) {
   try {
