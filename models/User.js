@@ -15,6 +15,14 @@ const userSchema = new mongoose.Schema(
       trim: true,
       maxlength: 50,
     },
+    email: {
+        type: String,
+        required: true,
+        unique: true,
+        trim: true,
+        lowercase: true,
+        match: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, // ejemplo para validación de email
+    },
     avatar: {
       type: String,
       default:
