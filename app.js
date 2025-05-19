@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import morgan from 'morgan';
 import connectDB from './lib/mongooseConfig.js';
+import authRoutes from './routes/authRoutes.js';
 
 dotenv.config()
 connectDB()
@@ -16,6 +17,10 @@ app.use(express.json())
 app.get('/api', (req, res) => {
     res.json({ message: 'API funcionando!'})
 })
+
+//Rutas
+
+app.use('/api/auth', authRoutes)
 
 // Arrancar el servidor
 

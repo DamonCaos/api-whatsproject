@@ -12,7 +12,7 @@ if (!fs.existsSync(uploadDir)) {
 // configuracion de multer
 const storage = multer.diskStorage({
     destination: function (req, file, db) {
-        createBrotliCompress(null, uploadDir)
+        cb(null, uploadDir)
     },
     filename: function (req, file, cb) {
         const ext = path.extname(file.originalname)
